@@ -10,11 +10,11 @@ def isValid(s):
 		else:
 			cnt -= 1
 		if cnt < 0:
-			return "false.." # '(' < ')'
+			return "NO" # '(' < ')'
 	if cnt == 0:
-		return "true.."
+		return "YES"
 	else:
-		return "false.." # '(' > ')'
+		return "NO" # '(' > ')'
 
 n = int(r())
 

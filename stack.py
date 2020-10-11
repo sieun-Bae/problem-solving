@@ -8,7 +8,7 @@ stack = []
 for k in range(n):
 	command = r()
 	if command[:4] == 'push':
-		num = int(command[4:])
+		num = int(command[5:])
 		stack.append(num)
 	elif command == 'top':
 		if len(stack) > 0:
@@ -19,9 +19,9 @@ for k in range(n):
 		print(len(stack))
 	elif command == 'empty':
 		if len(stack) == 0:
-			print('true')
+			print(1)
 		else:
-			print('stack is not empty...')
+			print(0)
 	elif command == 'pop':
 		if len(stack) > 0:
 			print(stack.pop())
