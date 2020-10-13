@@ -65,6 +65,12 @@ def dfs_paths(graph, start, goal):
 				stack.append((m, path+[m]))
 		return result
 
+def connected_component():
+	for i in graph.keys():
+		dfs(graph, i)
+		component += 1
+	return component
+
 print('dfs')
 print(dfs(graph, 'A'))
 print('bfs')
