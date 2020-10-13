@@ -65,12 +65,31 @@ def dfs_paths(graph, start, goal):
 				stack.append((m, path+[m]))
 		return result
 
-def connected_component():
+def bipartite(graph, start):
+	visited = []
+	stack = [start]
+	c = 1
+	while stack:
+		#print('stack:',stack)
+		n = stack.pop()
+		#print('n:',n)
+		if (n,c) not in visited:
+			#print('visited:', visited)
+			visited.append((n,c))
+			if c == 1:
+				c = 2
+			elif c == 2:
+				c = 1
+			stack += graph[n] - set(visited)
+			#print('stack:', stack)
+	return visited
+
+def connected_component(graph):
 	for i in graph.keys():
 		dfs(graph, i)
 		component += 1
 	return component
-
+print(bipartite(graph, 'A'))
 print('dfs')
 print(dfs(graph, 'A'))
 print('bfs')
