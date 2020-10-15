@@ -16,4 +16,17 @@ def prime_root(n):
 			return False
 	return True
 
-print(prime_root(499))
+def sieveOfEratosthenes():
+	p = list()
+	c = list(range(0, 101))
+	print(c)
+	for i in range(2, 101):
+		if c[i]:
+			p.append(i)
+			j = i*i #정수 overflow 막기 위해 i*2로 하기도
+			while j<=100:
+				c[j] = False
+				j += i
+	print(p)
+
+sieveOfEratosthenes()
